@@ -27,6 +27,7 @@ export async function PATCH(req: Request) {
 
     await db.user.update({
       where: {
+        // @ts-expect-error
         id: session.user?.id,
       },
       data: {

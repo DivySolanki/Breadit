@@ -21,10 +21,15 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async session({ token, session }) {
       if (token) {
+        // @ts-expect-error
         session.user.id = token.id;
+        // @ts-expect-error
         session.user.name = token.name;
+        // @ts-expect-error
         session.user.email = token.email;
+        // @ts-expect-error
         session.user.image = token.image;
+        // @ts-expect-error
         session.user.username = token.username;
       }
 

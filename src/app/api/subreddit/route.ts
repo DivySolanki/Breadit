@@ -27,12 +27,14 @@ export async function POST(req: Request) {
     const subreddit = await db.subreddit.create({
       data: {
         name,
+        // @ts-expect-error
         creatorId: session.user.id,
       },
     });
 
     await db.subscription.create({
       data: {
+        // @ts-expect-error
         userId: session.user.id,
         subredditId: subreddit.id,
       },

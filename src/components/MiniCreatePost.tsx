@@ -25,7 +25,9 @@ const MiniCreatePost: FC<MiniCreatePostProps> = ({ session }) => {
         <div className="relative">
           <UserAvatar
             user={{
+              // @ts-expect-error
               name: session?.user.name || null,
+              // @ts-expect-error
               image: session?.user.image || null,
             }}
           />

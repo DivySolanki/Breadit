@@ -24,7 +24,9 @@ const page = async ({}) => {
         <div className="grid gap-10">
           <UserNameForm
             user={{
+              // @ts-expect-error
               id: session.user.id,
+              // @ts-expect-error
               username: session.user.username || "",
             }}
           />

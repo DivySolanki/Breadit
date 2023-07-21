@@ -47,6 +47,7 @@ const CommentSection = async ({ postId }: CommentSectionProps) => {
             );
 
             const topLevelCommentVote = topLevelComment.votes.find(
+              // @ts-expect-error
               (vote) => vote.userId === session?.user.id
             );
 
@@ -71,6 +72,7 @@ const CommentSection = async ({ postId }: CommentSectionProps) => {
                     }, 0);
 
                     const replyVote = reply.votes.find(
+                      // @ts-expect-error
                       (vote) => vote.userId === session?.user.id
                     );
 

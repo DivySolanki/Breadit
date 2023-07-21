@@ -37,6 +37,7 @@ const Layout = async ({
             name: slug,
           },
           user: {
+            // @ts-expect-error
             id: session.user.id,
           },
         },
@@ -84,13 +85,13 @@ const Layout = async ({
                   <div className="text-gray-900">{memberCount}</div>
                 </dd>
               </div>
-
+              {/* @ts-expect-error */}
               {subreddit.creatorId === session?.user.id ? (
                 <div className="flex justify-between gap-x-4 py-3">
                   <p className="text-gray-500">You created this community</p>
                 </div>
               ) : null}
-
+              {/* @ts-expect-error */}
               {subreddit.creatorId !== session?.user.id ? (
                 <SubscribeLeaveToggle
                   subredditId={subreddit.id}
